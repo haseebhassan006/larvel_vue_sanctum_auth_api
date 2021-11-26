@@ -20,19 +20,28 @@ const routes = [
     {
         path : "/register",
         component:() => setComponent("auth/Register"),
-        name:"Register"
+        name:"Register",
+        meta: { guestOnly: true }
     },
     {
         path : "/home",
         component:() => setComponent("Home"),
-        name:"Home"
+        name:"Home",
+        meta: { guestOnly: true }
     },
     {
         path : "/login",
         component:() => setComponent("auth/Login"),
-        name:"Login"
-    }
+        name:"Login",
+        meta: { authOnly: true }
+    },
+    {
+        path : "/dashboard",
+        component:() => setComponent("dashboard/Dashboard"),
+        name:"Dashboard",
+        meta: { authOnly: true }
 
+    }
 
 ];
 

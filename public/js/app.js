@@ -2391,6 +2391,7 @@ try {
 
 
 window.axios = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+axios.defaults.withCredentials = true;
 window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 /**
  * Echo exposes an expressive API for subscribing to channels and listening
@@ -2447,19 +2448,37 @@ var routes = [{
   component: function component() {
     return setComponent("auth/Register");
   },
-  name: "Register"
+  name: "Register",
+  meta: {
+    guestOnly: true
+  }
 }, {
   path: "/home",
   component: function component() {
     return setComponent("Home");
   },
-  name: "Home"
+  name: "Home",
+  meta: {
+    guestOnly: true
+  }
 }, {
   path: "/login",
   component: function component() {
     return setComponent("auth/Login");
   },
-  name: "Login"
+  name: "Login",
+  meta: {
+    authOnly: true
+  }
+}, {
+  path: "/dashboard",
+  component: function component() {
+    return setComponent("dashboard/Dashboard");
+  },
+  name: "Dashboard",
+  meta: {
+    authOnly: true
+  }
 }];
 var router = new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   routes: routes,
@@ -53058,6 +53077,16 @@ var map = {
 		9,
 		"resources_js_components_app_pages_auth_RegisterComponent_vue"
 	],
+	"./components/app/pages/dashboard/DashboardComponent": [
+		"./resources/js/components/app/pages/dashboard/DashboardComponent.vue",
+		9,
+		"resources_js_components_app_pages_dashboard_DashboardComponent_vue"
+	],
+	"./components/app/pages/dashboard/DashboardComponent.vue": [
+		"./resources/js/components/app/pages/dashboard/DashboardComponent.vue",
+		9,
+		"resources_js_components_app_pages_dashboard_DashboardComponent_vue"
+	],
 	"./router": [
 		"./resources/js/router.js",
 		9
@@ -53223,7 +53252,7 @@ module.exports = JSON.parse('{"_from":"axios@^0.21","_id":"axios@0.21.4","_inBun
 /******/ 		// This function allow to reference async chunks
 /******/ 		__webpack_require__.u = (chunkId) => {
 /******/ 			// return url for filenames not based on template
-/******/ 			if ({"resources_js_components_app_pages_HomeComponent_vue":1,"resources_js_components_app_pages_auth_LoginComponent_vue":1,"resources_js_components_app_pages_auth_RegisterComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
+/******/ 			if ({"resources_js_components_app_pages_HomeComponent_vue":1,"resources_js_components_app_pages_auth_LoginComponent_vue":1,"resources_js_components_app_pages_auth_RegisterComponent_vue":1,"resources_js_components_app_pages_dashboard_DashboardComponent_vue":1}[chunkId]) return "js/" + chunkId + ".js";
 /******/ 			// return url for filenames based on template
 /******/ 			return undefined;
 /******/ 		};
