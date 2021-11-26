@@ -62,4 +62,12 @@ return [
         'encrypt_cookies' => App\Http\Middleware\EncryptCookies::class,
     ],
 
+
+    'paths' => [
+        'api/*',
+        '/login',
+        '/logout',
+        '/sanctum/csrf-cookie'
+    ],
+
 ];
