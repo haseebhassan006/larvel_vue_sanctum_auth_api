@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Redirect;
 
 /*
 |--------------------------------------------------------------------------
@@ -17,6 +18,6 @@ use Illuminate\Support\Facades\Route;
     return view('home');
 })->where('vue', '[\/\w\.-]*');
 
+
 // Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
