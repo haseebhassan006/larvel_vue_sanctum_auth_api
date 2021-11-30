@@ -31,7 +31,7 @@ const Routes = [
         name:"Home",
          meta:{
             middleware:"guest",
-         
+
         }
     },
     {
@@ -40,16 +40,16 @@ const Routes = [
         name:"Login",
          meta:{
             middleware:"guest",
-         
+
         }
     },
     {
         path : "/dashboard",
         component:() => setComponent("dashboard/Dashboard"),
-        name:"Dashboard",
+        name:"dashboard",
          meta:{
             middleware:"auth",
-          
+
         },
          children:[
             {
@@ -61,7 +61,7 @@ const Routes = [
                 }
             }
         ]
-  
+
     }
 ]
 

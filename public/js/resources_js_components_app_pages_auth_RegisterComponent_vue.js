@@ -99,7 +99,7 @@ var render = function() {
               _c(
                 "form",
                 {
-                  attrs: { action: "javascript:void(0)", method: "post" },
+                  attrs: { action: "javascript:void(0)" },
                   on: { submit: _vm.register }
                 },
                 [
@@ -544,7 +544,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
               case 0:
                 _this.processing = true;
                 _context.next = 3;
-                return axios.post('/register', _this.user).then(function (response) {
+                return axios.post('/api/register', _this.user).then(function (response) {
                   _this.signIn();
                 })["catch"](function (_ref) {
                   var data = _ref.response.data;

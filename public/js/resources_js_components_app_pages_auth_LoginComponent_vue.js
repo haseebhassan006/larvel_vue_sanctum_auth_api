@@ -98,10 +98,7 @@ var render = function() {
             _c("div", { staticClass: "card-body" }, [
               _c(
                 "form",
-                {
-                  staticClass: "row",
-                  attrs: { action: "javascript:void(0)", method: "post" }
-                },
+                { attrs: { action: "javascript:void(0)", method: "post" } },
                 [
                   _c("div", { staticClass: "form-group row" }, [
                     _c(
@@ -466,12 +463,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   name: "login",
@@ -501,7 +492,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
               case 3:
                 _context.next = 5;
-                return axios.post('/login', _this.auth).then(function (_ref) {
+                return axios.post('/api/login', _this.auth).then(function (_ref) {
                   var data = _ref.data;
 
                   _this.signIn();

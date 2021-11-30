@@ -14,9 +14,14 @@ use Illuminate\Support\Facades\Redirect;
 |
 */
 
- Route::get('/{vue?}', function () {
+//  Route::get('/{vue?}', function () {
+//     return view('home');
+// })->where('vue', '[\/\w\.-]*');
+
+
+Route::get('{any}', function () {
     return view('home');
-})->where('vue', '[\/\w\.-]*');
+})->where('any','.*');
 
 
 // Auth::routes();

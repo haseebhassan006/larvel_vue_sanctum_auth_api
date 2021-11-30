@@ -2196,7 +2196,7 @@ var Routes = [{
   component: function component() {
     return setComponent("dashboard/Dashboard");
   },
-  name: "Dashboard",
+  name: "dashboard",
   meta: {
     middleware: "auth"
   },

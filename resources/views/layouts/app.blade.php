@@ -41,16 +41,17 @@
                         <!-- Authentication Links -->
                         @guest
 
-                        @if (Route::has('register'))
+                        {{-- @if (Route::has('register')) --}}
                         <li class="nav-item">
                             <router-link class="nav-link" to="/register">{{ __('Register') }}</router-link>
                         </li>
-                        @endif
-                        @if (Route::has('login'))
+                        {{-- @endif --}}
+
+                        {{-- @if (Route::has('login')) --}}
                             <li class="nav-item">
                                 <router-link class="nav-link" to="/login">{{ __('Login') }}</router-link>
                             </li>
-                        @endif
+                        {{-- @endif --}}
 
 
                         @else
@@ -60,15 +61,16 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
+                                    <a class="dropdown-item">Logout</a>
+                                    {{-- <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                         {{ __('Logout') }}
-                                    </a>
+                                    </a> --}}
 
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                    {{-- <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                         @csrf
-                                    </form>
+                                    </form> --}}
                                 </div>
                             </li>
                         @endguest

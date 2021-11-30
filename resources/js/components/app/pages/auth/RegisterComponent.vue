@@ -7,7 +7,7 @@
                 <div class="card-header">Register</div>
 
                 <div class="card-body">
-                    <form action="javascript:void(0)" @submit="register"  method="post">
+                    <form action="javascript:void(0)" @submit="register" >
 
 
                         <div class="form-group row">
@@ -81,8 +81,9 @@ export default {
             signIn:'auth/login'
         }),
         async register(){
+
             this.processing = true
-            await axios.post('/register',this.user).then(response=>{
+            await axios.post('/api/register',this.user).then(response=>{
                 this.signIn()
             }).catch(({response:{data}})=>{
                 alert(data.message)
