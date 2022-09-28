@@ -26,6 +26,7 @@ class LoginController extends Controller
 
                 $success = true;
                 $message = 'User register successfully';
+                $token = $user->createToken('token-name', ['server:update'])->plainTextToken;
 
             };
         } catch (\Illuminate\Database\QueryException $ex) {
@@ -37,6 +38,7 @@ class LoginController extends Controller
         $response = [
             'success' => $success,
             'message' => $message,
+            'token' => $token
         ];
         return response()->json($response);
     }
@@ -57,7 +59,7 @@ class LoginController extends Controller
         $user = Auth::attempt($credentials);
         if($user) {
             $authentication = User::where('email', $request->email)->first();
-            $otp = Otp::generate($request->email, 4,  10);
+            // $otp = Otp::generate($request->email, 4,  10);
             $token = $authentication->createToken('token-name', ['server:update'])->plainTextToken;
             $success = true;
             $message = 'User login successfully';
@@ -72,7 +74,7 @@ class LoginController extends Controller
             'success' => $success,
             'message' => $message,
             'token' => $token,
-             'otp' => $otp
+            //  'otp' => $otp
         ];
         return response()->json($response);
     }
